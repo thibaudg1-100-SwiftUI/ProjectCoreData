@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Candy" representedClassName="Candy" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="candy" inverseEntity="Country"/>
+    </entity>
+    <entity name="Country" representedClassName="Country" syncable="YES">
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="shortName" optional="YES" attributeType="String"/>
+        <relationship name="candy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Candy" inverseName="origin" inverseEntity="Candy"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="shortName"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Movie" representedClassName="Movie" syncable="YES">
+        <attribute name="director" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Pupil" representedClassName="Pupil" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Ship" representedClassName="Ship" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="universe" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Singer" representedClassName="Singer" syncable="YES">
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Wizard" representedClassName="Wizard" syncable="YES" codeGenerationType="class">
+        <attribute name="counter" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <elements>
+        <element name="Candy" positionX="209.3482666015625" positionY="-47.22756958007812" width="156.8360595703125" height="59"/>
+        <element name="Country" positionX="418.757080078125" positionY="-4.927337646484375" width="187.96435546875" height="88"/>
+        <element name="Movie" positionX="-159.072998046875" positionY="87.10791015625" width="128" height="74"/>
+        <element name="Pupil" positionX="-121.8993530273438" positionY="-121.2744750976562" width="128" height="44"/>
+        <element name="Ship" positionX="96.5584716796875" positionY="-138.0689086914062" width="128" height="59"/>
+        <element name="Singer" positionX="33.49859619140625" positionY="126.4798278808594" width="128" height="59"/>
+        <element name="Wizard" positionX="-59.48126220703125" positionY="-13.58145141601562" width="180.6137084960938" height="73"/>
+    </elements>
+</model>
